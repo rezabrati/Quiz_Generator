@@ -1,9 +1,3 @@
-unstructured
-tiktoken
-pinecone-client
-pypdf
 openai
-langchain
-pandas
-python-dotenv
-pandas
+streamlit
+PyPDF2
