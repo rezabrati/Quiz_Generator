@@ -1,0 +1,1 @@
+from .model import QuizGenerator_model
