@@ -5,9 +5,9 @@ import streamlit as st
 
 
 # Streamlit UI
-st.title("🤖 AI Quiz Generator 📝")
+st.title("AI Quiz Generator 📝")
 
-uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
+uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")    
 quiz_gen = QuizGenerator(uploaded_file)
 quiz_generator = QuizGenerator_model(config.API_KEY, config.BASE_URL)
 
@@ -41,7 +41,8 @@ with col2:
     if s:
         with st.spinner("Generating your quiz..."):
             # Assume `answer` and `extract_quiz_data` are defined functions
-            quiz_text = quiz_generator.answer(num_quiz, quiz_format, diff_level, context)
+            text = quiz_generator.answer(num_quiz, quiz_format, diff_level, context)
+            quiz_text = quiz_generator.validate_and_format_quiz(text)
             questions, correct_answers = quiz_gen.extract_quiz_data(quiz_text)
 
             # Store questions and correct answers in session state
@@ -72,21 +73,23 @@ with col2:
                 
                 user_answers.append(user_answer)
 
-# Create a horizontal layout for buttons
-button_col1, button_col2 = st.columns([2, 1])  # Adjust the width ratio if needed
+    # Create a horizontal layout for buttons
+    button_col1, button_col2 = st.columns([2, 1])  # Adjust the width ratio if needed
 
-with button_col1:
-    if st.session_state.quiz_generated:  # Show the button only if the quiz has been generated
-        s2 = st.button("Submit Answers")
+    with button_col1:
+        if st.session_state.quiz_generated:  # Show the button only if the quiz has been generated
+            s2 = st.button("Submit Answers")
 
-with button_col2:
-    # If the quiz has been generated, you can also show other buttons here if needed
-    pass
+    with button_col2:
+        # If the quiz has been generated, you can also show other buttons here if needed
+        pass
 
 if st.session_state.quiz_generated:
     with col3:
         # Button to submit answers
         if s2:
+            score = 0
+
             with st.container(height=400):
                 # Compare user's answers with the correct ones
                 for idx, user_answer in enumerate(user_answers):
@@ -100,5 +103,11 @@ if st.session_state.quiz_generated:
                     # Check if the user's answer matches the correct answer
                     if user_answer.strip() == correct_answer.strip():
                         st.write("✅ Correct")
+                        score += 1
                     else:
                         st.write("❌ Incorrect")
+            if score > 0:
+                with st.popover("📊 Your Results"):
+                    percentage_score = (score / len(questions)) * 100
+                    st.markdown(f"### 🎉 Your Score: {percentage_score}%")
+
