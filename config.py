@@ -1,3 +1,3 @@
 # config.py
-API_KEY = "fw_3ZYkiWjHCT8XV74Nu7AN6grN"
-BASE_URL = "https://api.fireworks.ai/inference/v1"
+API_KEY = "your_api_key"
+BASE_URL = "your_base_url"
