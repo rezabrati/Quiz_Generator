@@ -56,7 +56,7 @@ The application can also be run using Docker for a simplified and portable setup
     ```
    - Alternatively, pass API credentials directly as environment variables:
     ```bash
-    docker run -p 8501:8501 -e API_KEY=your_api_key -e BASE_URL=your_base_url baratireza/quiz-generator-2024
+    docker run -e API_KEY=your_api_key -e BASE_URL=your_base_url -p 8501:8501 quiz-generator-2024
     ```
 
 3. Access the App: Open your browser and navigate to http://localhost:8501.
