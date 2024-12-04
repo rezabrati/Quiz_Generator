@@ -13,7 +13,7 @@ AI Quiz Generator is a web-based application hosted on AWS that lets users uploa
 - The application also is hosted on **AWS** for global access (EC2, S3).
  
 ## Live Demo
-🚀 **Try it now**: (http://ec2-check.s3-website-us-east-1.amazonaws.com) 
+🚀 **Try it now**: http://interactive-quiz-generator.s3-website-us-east-1.amazonaws.com
 
 ## Installation
 
