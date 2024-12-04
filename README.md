@@ -1,6 +1,6 @@
 ﻿# AI Quiz Generator 📝
 
-AI Quiz Generator is a Streamlit-based web application that lets users upload a PDF file and generate a customizable quiz. With this tool, users can select quiz parameters such as the number of questions, question format, and difficulty level. The quiz is then auto-generated from the PDF content, and users can complete it in-app with real-time feedback on their answers.
+AI Quiz Generator is a web-based application hosted on AWS that lets users upload a PDF file and generate a customizable quiz. With this tool, users can select quiz parameters such as the number of questions, question format, and difficulty level. The quiz is then auto-generated from the PDF content, and users can complete it in-app with real-time feedback on their answers.
 
 ## Features
 - **PDF Upload**: Upload any PDF file to generate quiz content.
@@ -10,6 +10,10 @@ AI Quiz Generator is a Streamlit-based web application that lets users upload a 
   - **Difficulty Level**: Set difficulty to easy, medium, or hard.
 - **Real-time Feedback**: After submitting answers, the app provides a score with correct and incorrect answers highlighted.
 - **Percentage Score Display**: View your score in percentage format.
+- The application also is hosted on **AWS** for global access (EC2, S3).
+ 
+## Live Demo
+🚀 **Try it now**: (http://ec2-check.s3-website-us-east-1.amazonaws.com) 
 
 ## Installation
 
