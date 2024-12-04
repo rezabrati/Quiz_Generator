@@ -25,7 +25,6 @@ Follow these steps to install and run the application on your local machine.
 1. Clone the repository:
     ```bash
     git clone https://github.com/your-username/AI-Quiz-Generator.git
-    cd AI-Quiz-Generator
     ```
 
 2. Install the required dependencies:
