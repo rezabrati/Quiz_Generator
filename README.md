@@ -46,22 +46,23 @@ The application can also be run using Docker for a simplified and portable setup
 
 1. Pull the Docker Image:
     ```bash
-    docker pull your-dockerhub-username/quiz-generator
+    docker pull baratireza/quiz-generator
     ```
 
 2. Run the Container:
    - If you have a .env file with your API credentials:
     ```bash
-    docker run --env-file .env -p 8501:8501 your-dockerhub-username/quiz-generator
+    docker run --env-file .env -p 8501:8501 baratireza/quiz-generator
     ```
    - Alternatively, pass API credentials directly as environment variables:
     ```bash
-    docker run -p 8501:8501 -e API_KEY=your_api_key -e BASE_URL=your_base_url your-dockerhub-username/quiz-generator
+    docker run -p 8501:8501 -e API_KEY=your_api_key -e BASE_URL=your_base_url baratireza/quiz-generator
     ```
 
 3. Access the App: Open your browser and navigate to http://localhost:8501.
+
     
-### Usage
+## Usage
 
 1. **Upload a PDF File**:  
    Upload a `.pdf` file containing the content for quiz questions.
