@@ -11,6 +11,7 @@ AI Quiz Generator is a web-based application hosted on AWS that lets users uploa
 - **Real-time Feedback**: After submitting answers, the app provides a score with correct and incorrect answers highlighted.
 - **Percentage Score Display**: View your score in percentage format.
 - The application also is hosted on **AWS** for global access (EC2, S3).
+- The application can also be run using **Docker** for a simplified and portable setup.
  
 ## Live Demo
 🚀 **Try it now**: http://interactive-quiz-generator.s3-website-us-east-1.amazonaws.com
